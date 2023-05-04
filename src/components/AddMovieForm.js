@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 export default function AddMovieForm(props) {
   const { push } = useHistory();
 
-  const { setMovies } = props;
   const [movie, setMovie] = useState({
     title: "",
     director: "",
