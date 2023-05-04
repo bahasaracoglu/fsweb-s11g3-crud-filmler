@@ -42,9 +42,12 @@ const App = (props) => {
   };
 
   const addToFavorites = (movie) => {
-    const updatedFavorites = [...favoriteMovies, movie];
-    setFavoriteMovies(updatedFavorites);
-    history.push("/movies");
+    const alreadyInFavs = favoriteMovies.find((x) => movie.title === x.title);
+    if (!alreadyInFavs) {
+      const updatedFavorites = [...favoriteMovies, movie];
+      setFavoriteMovies(updatedFavorites);
+      history.push("/movies");
+    }
   };
 
   return (
