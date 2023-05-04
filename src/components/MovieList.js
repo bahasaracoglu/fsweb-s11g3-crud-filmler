@@ -9,15 +9,15 @@ const MovieList = (props) => {
 
   return (
     <div className="flex-1">
-      <div className="overflow-hidden bg-white rounded-md shadow mb-4 sm:min-h-[400px]">
-        <table className="table-auto border-collapse text-left w-full">
+      <div className="overflow-hidden bg-white rounded-md shadow mb-4 sm:min-h-[400px]  dark:bg-neutral-300">
+        <table className="table-auto border-collapse text-left w-full  dark:bg-neutral-200">
           <thead>
-            <tr className="border-zinc-200 border-b">
-              <th className="pl-4">İsim</th>
-              <th>Yönetmen</th>
-              <th>Tür</th>
-              <th>Metascore</th>
-              <th></th>
+            <tr className="border-zinc-200 border-b   dark:text-white">
+              <th className="pl-4  dark:bg-neutral-500">İsim</th>
+              <th className="dark:bg-neutral-500">Yönetmen</th>
+              <th className="dark:bg-neutral-500">Tür</th>
+              <th className="dark:bg-neutral-500">Metascore</th>
+              <th className="dark:bg-neutral-500"></th>
             </tr>
           </thead>
 

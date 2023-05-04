@@ -15,7 +15,30 @@ import AddMovieForm from "./components/AddMovieForm";
 const App = (props) => {
   const [movies, setMovies] = useState([]);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [theme, setTheme] = useState("light");
   const history = useHistory();
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const themeToggle = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  console.log(theme);
 
   useEffect(() => {
     axios
@@ -51,9 +74,15 @@ const App = (props) => {
   };
 
   return (
-    <div>
-      <nav className="bg-zinc-800 px-6 py-3">
+    <div className=" dark:bg-black h-screen">
+      <nav className="bg-zinc-800 px-6 py-3 flex justify-between  items-center ">
         <h1 className="text-xl text-white">HTTP / CRUD Film Projesi</h1>
+        <button
+          onClick={themeToggle}
+          className="p-1.5 text-sm  bg-stone-300 rounded-xl text-black "
+        >
+          Dark Mode
+        </button>
       </nav>
 
       <div className="max-w-4xl mx-auto px-3 pb-4">

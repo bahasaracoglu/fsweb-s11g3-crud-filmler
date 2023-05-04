@@ -40,7 +40,7 @@ export default function AddMovieForm(props) {
   const { title, director, genre, metascore, description } = movie;
 
   return (
-    <div className="bg-white rounded-md shadow flex-1">
+    <div className="bg-white rounded-md shadow flex-1  dark:bg-neutral-500  dark:text-white">
       <form onSubmit={handleSubmit}>
         <div className="p-5 pb-3 border-b border-zinc-200">
           <h4 className="text-xl font-bold">
@@ -52,6 +52,7 @@ export default function AddMovieForm(props) {
           <div className="py-2">
             <label className="block pb-1 text-lg">Title</label>
             <input
+              className="dark:text-[#566787]"
               value={title}
               onChange={handleChange}
               name="title"
@@ -61,6 +62,7 @@ export default function AddMovieForm(props) {
           <div className="py-2">
             <label className="block pb-1 text-lg">Director</label>
             <input
+              className="dark:text-[#566787]"
               value={director}
               onChange={handleChange}
               name="director"
@@ -70,6 +72,7 @@ export default function AddMovieForm(props) {
           <div className="py-2">
             <label className="block pb-1 text-lg">Genre</label>
             <input
+              className="dark:text-[#566787]"
               value={genre}
               onChange={handleChange}
               name="genre"
@@ -79,6 +82,7 @@ export default function AddMovieForm(props) {
           <div className="py-2">
             <label className="block pb-1 text-lg">Metascore</label>
             <input
+              className="dark:text-[#566787]"
               value={metascore}
               onChange={handleChange}
               name="metascore"
@@ -88,6 +92,7 @@ export default function AddMovieForm(props) {
           <div className="py-2">
             <label className="block pb-1 text-lg">Description</label>
             <textarea
+              className="dark:text-[#566787]"
               value={description}
               onChange={handleChange}
               name="description"
@@ -96,12 +101,15 @@ export default function AddMovieForm(props) {
         </div>
 
         <div className="px-5 py-4 border-t border-zinc-200 flex justify-end gap-2">
-          <Link to={`/movies/1`} className="myButton bg-zinc-500">
+          <Link
+            to={`/movies/1`}
+            className="myButton bg-zinc-500  dark:bg-slate-700"
+          >
             Vazgeç
           </Link>
           <button
             type="submit"
-            className="myButton bg-green-700 hover:bg-green-600"
+            className="myButton bg-green-700 hover:bg-green-600  dark:bg-green-900"
           >
             Ekle
           </button>
