@@ -5,7 +5,7 @@ const FavoriteMovieList = (props) => {
   const { favoriteMovies } = props;
 
   return (
-    <div className="flex-1 sm:max-w-[250px] p-5 pr-5 bg-white shadow rounded-md  dark:bg-neutral-500">
+    <div className="flex-1 sm:max-w-[250px] p-5 pr-5 bg-white shadow rounded-md  dark:bg-neutral-500  dark:text-white">
       <h5 className="font-bold dark:text-white">Favori Filmler</h5>
       <div className="pt-3 text-sm">
         {favoriteMovies.map((movie) => (
